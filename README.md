@@ -1,4 +1,7 @@
 # R programming 4
-R code for the course "Basics of Programming in R" (4-th year, Faculty of Social Sciences, 2017-2018)
 
-Html-files knit from the Rmd-files in this repo can be found [here](http://rpubs.com/AllaT/).
+Материалы по курсу "Основы программирования в R" (4 курс, Факультет социальных наук НИУ ВШЭ, 2017-2018)
+
+Преподаватель: Алла Тамбовцева
+
+Материалы по курсу также публикуются на [RPubs](http://rpubs.com/AllaT/).
