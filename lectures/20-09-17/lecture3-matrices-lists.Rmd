@@ -6,9 +6,6 @@ date: '20 сентября 2017 г '
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 ## Еще немного про векторы
 
 ### Поименованные векторы
