@@ -66,7 +66,7 @@ y <- sample(1:100, size = 70)
 
 Дана матрица M
 
-(*happiness* - индекс счастья, [World Happiness Report 2017](http://worldhappiness.report/ed/2017/). *gdp* - [ВВП](https://data.worldbank.org/data-catalog/GDP-ranking-table) в миллионах долларов зв 2017 году):
+(*happiness* - индекс счастья, [World Happiness Report 2017](http://worldhappiness.report/ed/2017/). *gdp* - [ВВП](https://data.worldbank.org/data-catalog/GDP-ranking-table) в миллионах долларов в 2017 году):
 
 ``` r
 happiness <- c(6.442, 6.442, 5.835, 5.856, 5.245, 6.635, 7.498, 5.977, 6.572, 6.705)
