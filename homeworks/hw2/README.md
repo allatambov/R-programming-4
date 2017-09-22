@@ -45,7 +45,9 @@ y <- sample(1:100, size = 70)
 3.  Выведите на экран id респондентов, которые поддерживают только Ядвигу Эпсилоновну и больше никого.
 4.  *(Не оценивается, пункт за плюсик в карму)*. Придумайте, соблюдая "стилистику" задачи, имена остальным семи кандидатам.
 
-*Подсказка из теории множеств:* ![equation](https://latex.codecogs.com/gif.latex?A&space;\cap B&space;\cap C&space; =&space; (A \cap B) \cap C&space; =&space; A \cap (B \cap C))
+*Подсказка из теории множеств:* 
+
+![equation](https://latex.codecogs.com/gif.latex?A\cap&space;B&space;\cap&space;C&space;=&space;(A&space;\cap&space;B)&space;\cap&space;C=A&space;\cap&space;(B&space;\cap&space;C))
 
 **Задача 2**
 
