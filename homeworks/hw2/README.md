@@ -47,7 +47,7 @@ y <- sample(1:100, size = 70)
 
 *Подсказка из теории множеств:* 
 
-![equation](https://www.codecogs.com/eqnedit.php?latex=A&space;\cap&space;B&space;\cap&space;C&space;=&space;A&space;\cap&space;(B&space;\cap&space;C)&space;=&space;(A&space;\cap&space;B)&space;\cap&space;C)
+![equation](https://www.codecogs.com/eqnedit.php?latex=A&space;\cap&space;B&space;\cap&space;C&space;=&space;A&space;\cap&space;(B&space;\cap&space;C)&space;=&space;(A&space;\cap&space;B)&space;\cap&space;C))
 
 
 **Задача 2**
