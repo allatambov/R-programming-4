@@ -47,7 +47,7 @@ y <- sample(1:100, size = 70)
 
 *Подсказка из теории множеств:* 
 
-![equation](<a href="https://www.codecogs.com/eqnedit.php?latex=A&space;\cap&space;B&space;\cap&space;C&space;=&space;A&space;\cap&space;(B&space;\cap&space;C)&space;=&space;(A&space;\cap&space;B)&space;\cap&space;C" target="_blank"><img src="https://latex.codecogs.com/gif.latex?A&space;\cap&space;B&space;\cap&space;C&space;=&space;A&space;\cap&space;(B&space;\cap&space;C)&space;=&space;(A&space;\cap&space;B)&space;\cap&space;C" title="A \cap B \cap C = A \cap (B \cap C) = (A \cap B) \cap C" /></a>)
+<a href="https://www.codecogs.com/eqnedit.php?latex=A&space;\cap&space;B&space;\cap&space;C&space;=&space;A&space;\cap&space;(B&space;\cap&space;C)&space;=&space;(A&space;\cap&space;B)&space;\cap&space;C" target="_blank"><img src="https://latex.codecogs.com/gif.latex?A&space;\cap&space;B&space;\cap&space;C&space;=&space;A&space;\cap&space;(B&space;\cap&space;C)&space;=&space;(A&space;\cap&space;B)&space;\cap&space;C" title="A \cap B \cap C = A \cap (B \cap C) = (A \cap B) \cap C" /></a>
 
 
 **Задача 2**
