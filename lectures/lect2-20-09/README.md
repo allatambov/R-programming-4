@@ -1,6 +1,7 @@
 Лекции также опубликованы на RPubs:
 
-* lecture3-matrices-lists: <https://rpubs.com/AllaT/lecture3_multidim>
+* lecture2_vect_contd: <https://rpubs.com/AllaT/lecture2_vect_contd>
+* lecture2-matrices-lists: <https://rpubs.com/AllaT/lecture2_multidim>
 
 Что можно почитать:
 

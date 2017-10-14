@@ -1,6 +1,6 @@
 Лекции также опубликованы на RPubs:
 
-* lecture5-descriptives: https://rpubs.com/AllaT/lecture5-descriptives
+* lecture4-descriptives: https://rpubs.com/AllaT/lecture4_dplyr
 
 Что можно почитать:
 
