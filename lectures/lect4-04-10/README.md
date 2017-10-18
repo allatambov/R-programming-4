@@ -5,4 +5,5 @@
 Что можно почитать:
 
 Документация по библиотеке dplyr: https://cran.r-project.org/web/packages/dplyr/dplyr.pdf
+
 Тьюториал по dplyr: https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html
