@@ -1,6 +1,6 @@
 Лекции также опубликованы на RPubs:
 
-* lecture4-dataframes: https://rpubs.com/AllaT/lecture3_dataframes
+* lecture3-dataframes: https://rpubs.com/AllaT/lecture3_dataframes
 
 Что можно почитать:
 
