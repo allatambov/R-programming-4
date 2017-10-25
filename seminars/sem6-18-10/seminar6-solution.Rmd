@@ -1,0 +1,77 @@
+---
+title: "Семинар 6. Описательные статистики в R."
+subtitle: "Решения"
+author: "Алла Тамбовцева"
+date: '25 октября 2017 г '
+output: html_document
+---
+
+1. Зайдите на сайт COMPARATIVE POLITICAL DATA SET (http://www.cpds-data.org/index.php/data). Скачайте базу данных Comparative Political Data Set в формате .dta. Загрузите базу данных в R (не забудьте про соответствующую библиотеку).
+
+```{r, message=FALSE}
+library(foreign)
+
+polit <- read.dta("polit.dta")
+```
+
+2. Посмотрите на загруженную базу данных. Оставьте в базе данных только переменные year, country, poco, eu, gov_right1, gov_cent1, gov_left1, womenpar и только те наблюдения, которые относятся к 2015 году. Используйте для этого библиотеку dplyr.
+
+```{r, message=FALSE}
+View(polit)
+
+library(dplyr)
+
+polit <- polit %>% select(year, country, poco, eu, gov_right1, gov_cent1, gov_left1, womenpar) %>% filter(year == 2015)
+```
+
+3. Сколько наблюдений осталось в базе? Все ли типы переменных правильны? Если нет, поправьте.
+
+```{r, results='hide'}
+str(polit) # все ок
+```
+
+4. Выведите описательные статистики для всех переменных в базе.
+
+```{r}
+summary(polit)
+```
+
+5. Используя библиотеку stargazer, выгрузите таблицу описательных статистик в html-файл (table.htm). Уберите из таблицы описательные статистики для year, добавьте заголовок таблицы, назовите строки более красиво (right, center, left, women). Сделайте так, чтобы в таблице из статистик остались только среднее и стандартное отклонение. Добавьте в таблицу медиану. Оставьте в числовых значениях только 2 знака после запятой. Добавьте комментарий к таблице.
+
+```{r, message=FALSE, results='hide'}
+library(stargazer)
+
+stargazer(polit, out = "table.htm") 
+
+# убираем year
+
+stargazer(select(polit, -year), out = "table.htm") 
+
+# добавляем заголовок и названия строк
+
+stargazer(select(polit, -year), out = "table.htm",
+          title = "Summary statistics",
+          covariate.labels = c("right", "center", "left", "women"))
+          
+# оставляем только среднее и ст.отклонение и добавляем медиану
+
+stargazer(select(polit, -year), out = "table.htm",
+          title = "Summary statistics",
+          covariate.labels = c("right", "center", "left", "women"), 
+          omit.summary.stat = c("max", "min", "n"), 
+          median = TRUE)
+
+# оставляем 2 знака после запятой и добавляем комментарий
+
+stargazer(select(polit, -year), out = "table.htm",
+          title = "Summary statistics",
+          covariate.labels = c("right", "center", "left", "women"), 
+          omit.summary.stat = c("max", "min", "n"), 
+          median = TRUE,
+          digits = 2,
+          notes = "Comparative political data set, 2015")
+
+```
+
+Пункты 6-10 - to be continued.
+
