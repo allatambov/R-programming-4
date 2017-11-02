@@ -182,9 +182,13 @@ scatterplotMatrix(df[10:12], diagonal = "histogram", smooth = FALSE)
 
 * все значения x разбиваем на много маленьких интервалов
 * на каждом интервале строим регрессионную прямую
+
+```{r echo=FALSE, out.width='50%'}
+knitr::include_graphics('Rplot.png')
+```
+
 * "сглаживаем" получившуюся ломаную линию, чтобы получить гладкую кривую
 
-![alt text](https://github.com/allatambov/master/lectures/lect7-01-11/Rplot.png)
 Наведем красоту на графике выше:
 
 ```{r}
@@ -316,13 +320,12 @@ source("correlation.R")
 Финальный аккорд:
 
 ```{r, message=FALSE}
-# созраняем результат в файл corrtable.htm - можем открыть через браузер иди Word
+# сохраняем результат в файл corrtable.htm - можем открыть через браузер иди Word
 
 corstars(x = df[10:12], method = "pearson", removeTriangle = "upper", 
          result = "html", file = "corrtable.htm")
 ```
 
-[Таблица](https://github.com/allatambov/R-programming-4/tree/master/lectures/lect7-01-11).
 
 
 
