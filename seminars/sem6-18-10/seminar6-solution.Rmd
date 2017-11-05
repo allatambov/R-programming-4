@@ -73,5 +73,47 @@ stargazer(select(polit, -year), out = "table.htm",
 
 ```
 
-Пункты 6-10 - to be continued.
+6. Сгруппируйте базу данных по переменной poco. Выведите на экран таблицу с количеством стран.
+
+```{r}
+polit %>% group_by(poco) %>% tally
+``` 
+
+7. Выведите таблицу частот для переменной poco. Постройте столбиковую диаграмму для этой переменной. Приведите ее в порядок.
+
+```{r}
+tab <- table(polit$poco)
+View(tab)
+barplot(tab)
+
+
+barplot(tab, main = "Countries", col = c("darkblue", "red"))
+```
+
+8. Постройте гистограмму для переменной womenpar. Приведите ее в порядок.
+
+```{r}
+hist(polit$womenpar)
+
+hist(polit$womenpar, main = "Share of women in parliament", 
+     col = "plum",
+     xlab = "share of women (in %)",
+     xlim = c(0, 50))
+```
+
+9. Постройте гистограмму для переменной gov_left1 для пост-коммунистических стран. Постройте гистограмму для переменной gov_left1 для всех остальных стран. Важно: считайте, что ваши две гистограммы должны быть сравнимы. Гистограммы не должны быть на одном графике, но по ним должно быть возможным сравнение распределения показателя для двух групп стран.
+
+```{r}
+postcom <- filter(polit, poco == "Post-communist")
+no_postcom <- filter(polit, poco == "No")
+hist(postcom$gov_left1)
+hist(no_postcom$gov_left1) # и так сравнимы, обе строятся на [0,100]
+```
+
+10. Постройте "ящик с усами" для переменной womenpar. Постройте "ящики с усами" для двух групп стран (пост-коммунистические и другие) на одном графике. Подсказка: `boxplot(x ~ group)`.
+
+```{r}
+boxplot(womenpar ~ poco, data = polit, 
+        col = c("lightblue", "tomato"))
+```
 
