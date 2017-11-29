@@ -235,7 +235,7 @@ ggplot(data = beav, aes(x = "", y = temp, group = activ, fill = activ)) +
 Обычные диаграммы рассеяния мы строили и не раз. Построим теперь диаграмму рассеяния с помощью `ggplot2`. Для начала возьмем нашу любимую базу по показателям WGI и Freedom House. 
 
 ```{r}
-dat <- read.csv("/home/oem/Рабочий стол/wgi_fh_new.csv", dec = ",")
+dat <- read.csv("wgi_fh_new.csv", dec = ",")
 dat <- na.omit(dat)
 ```
 
@@ -270,6 +270,7 @@ ggplot(data = dat, aes(x = va, y = rl)) +
 Добавим переменную:
 
 ```{r}
+library(dplyr)
 dat <- dat %>% mutate(not_free = as.integer(fh >= 5.5),
                     partly_free = as.integer(fh >= 3 & fh <= 5),
                     free = as.integer(fh <= 2.5))
@@ -284,7 +285,7 @@ dat$fh_type <- factor(dat$fh_type)
 
 ```{r}
 ggplot(data = dat, aes(x = va, y = rl)) +
-  geom_point(aes(size = fh, color=fh_type)) + 
+  geom_point(aes(size = fh_score, color=fh_type)) + 
   labs(title = "WGI indicators", x = "Voice and Accountability", 
        y = "Rule of Law") 
 ```
