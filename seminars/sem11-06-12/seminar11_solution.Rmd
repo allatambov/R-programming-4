@@ -1,0 +1,60 @@
+---
+title: "Семинар 11. Решения."
+date: '06 декабря 2017'
+output: github_document
+---
+1. Загрузите shape-файлы для Соединенных Штатов Америки с сайта [Global Administrative Areas](http://www.gadm.org/country). Постройте карту США (пока пустую). Уберите из shp-файла Аляску и Гавайские острова. Постройте карту еще раз. Сравните.
+
+```{r}
+library(maptools)
+full <- readShapePoly("USA_adm_shp/USA_adm1.shp")
+plot(full)
+
+# убираем два штата
+exclude <- c("Alaska", "Hawaii")
+states <- subset(full, !NAME_1 %in% exclude)
+plot(states)
+```
+
+2. Загрузите базу данных `states.csv`, в которой хранятся показатели по округам (counties) США. В задании нас будет интересовать раскраска карты штатов в соответствии с численностью населения в них (данные за 2010 год, `popul10`). Сгруппируйте значения в базе данных по штатам по этому показателю и сохраните результат в базу `info`.
+
+```{r}
+data <- read.csv("states.csv")
+library(dplyr)
+info <- data %>% group_by(state) %>% summarise(population = sum(pop2010))
+```
+
+3. Раскрасьте карту США в соответствии с численностью населения. Выберите любую палитру цветов, считайте, что мы хотим разбить значения численности населения на 9 групп (по процентилям).
+
+```{r}
+# подготовка
+colnames(info)[1] <- "NAME_1"
+res <- merge(states, info, by = "NAME_1")
+View(res)
+
+# карта
+library(classInt)
+library(RColorBrewer)
+colors <- brewer.pal(9, "Blues")
+brks <-classIntervals(res$population, n = 9, style = "quantile")
+brks<- brks$brks
+
+plot(states, col = colors[findInterval(res$population, brks,all.inside = TRUE)], axes = FALSE)
+text(coordinates(states), labels = states$HASC_1, col = "darkred", cex = 0.8)
+
+# а теперь сделаем красивые подписи
+
+# цвета
+coldrops <- findInterval(res$population, brks, all.inside = TRUE)
+dark <- c(8, 9)
+coltext <- ifelse(coldrops %in% dark, "yellow", "black")
+
+# текст - сокращенные названия штатов
+labs <- toupper(abbreviate(states$NAME_1, minlength = 2))
+
+# cex - размер шрифта
+# font - тип шрифта, здесь - полужирный
+
+plot(states, col = colors[findInterval(res$population, brks,all.inside = TRUE)], axes = FALSE)
+text(coordinates(states), labels = labs, col = coltext, cex = 0.8)
+```
