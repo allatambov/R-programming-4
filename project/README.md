@@ -16,6 +16,14 @@
 
 Пример Rmd-файла с заданием (набросок, не образец выполнения!): example.md
 
+Полезные материалы: 
+
+* интерпретация результатов: статистический и содержательный выводы [interpretation.md](https://github.com/allatambov/R-programming-4/blob/master/project/interpretation.md)
+
+* статистические критерии (сравнение средних) [statistical_tests.Rmd](http://rpubs.com/AllaT/stat-tests)
+
+* включение таблицы из stargazer сразу в Rmd [stargazer-Rmarkdown](http://rpubs.com/AllaT/stargazer-rmd)
+
 
 ## Критерии оценивания
 
