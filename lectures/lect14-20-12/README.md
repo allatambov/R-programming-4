@@ -4,4 +4,7 @@
 
 2. Облака слов
 
+Лекция на RPubs: <http://rpubs.com/AllaT/texts-clouds>
+
 3. Анализ тональности 
+
